@@ -18,5 +18,5 @@
     <instrumentation
             android:name="android.test.InstrumentationTestRunner"
             android:targetPackage="com.celsa.globetrotterpacklist"
-            android:label="Tests for com.celsa.globetrotterchecklist"/>
+            android:label="Tests for com.celsa.globetrotterpacklist"/>
 </manifest>
