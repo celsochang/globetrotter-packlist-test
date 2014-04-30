@@ -1,10 +1,15 @@
 package com.celsa.globetrotterpacklist;
 
 import android.content.ContentValues;
+import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.test.ProviderTestCase2;
 import android.test.mock.MockContentResolver;
 import com.celsa.globetrotterpacklist.persistance.ItemContentProvider;
+
+import java.io.ByteArrayOutputStream;
 
 public class ItemContentProviderTest extends ProviderTestCase2<ItemContentProvider> {
 
@@ -43,6 +48,12 @@ public class ItemContentProviderTest extends ProviderTestCase2<ItemContentProvid
         ContentValues cv = new ContentValues();
 
         cv.put("name", "new");
+
+        Bitmap b = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.ic_launcher);
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        b.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+        cv.put("image", bos.toByteArray());
+
         cv.put("\"order\"", "99");
 
         assertNotNull(cr.insert(ItemContentProvider.ITEMS, cv));
