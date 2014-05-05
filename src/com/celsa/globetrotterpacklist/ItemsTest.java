@@ -40,6 +40,5 @@ public class ItemsTest extends ActivityInstrumentationTestCase2<Items> {
 
         assertEquals(1, item.getId());
         assertEquals("test", item.getName());
-        assertNull(item.getPhotoId());
     }
 }

@@ -1,5 +1,6 @@
 package com.celsa.globetrotterpacklist;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.res.Resources;
 import android.database.Cursor;
